@@ -151,16 +151,6 @@ export default async function Projects({ params }: { params: Promise<{ slug: str
         gap="16"
         m={{ hide: true }}
       >
-        <Row
-          gap="12"
-          paddingLeft="2"
-          vertical="center"
-          onBackground="neutral-medium"
-          textVariant="label-default-s"
-        >
-          <Icon name="document" size="xs" />
-          On this page
-        </Row>
         <HeadingNav fitHeight />
       </Column>
     </Row>

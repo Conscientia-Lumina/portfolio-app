@@ -3,20 +3,41 @@ import { baseURL, person } from "@/resources";
 
 export const runtime = "nodejs";
 
+const TIMEOUT = 10000; // 10 second timeout
+
+async function fetchWithTimeout(url: string, options: RequestInit = {}, timeout: number = TIMEOUT) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeout);
+  
+  try {
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal,
+    });
+    return response;
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
 export async function GET(request: Request) {
   let url = new URL(request.url);
   let title = url.searchParams.get("title") || "Portfolio";
 
   async function loadGoogleFont(font: string) {
-    const url = `https://fonts.googleapis.com/css2?family=${font}`;
-    const css = await (await fetch(url)).text();
-    const resource = css.match(/src: url\((.+)\) format\('(opentype|truetype)'\)/);
+    try {
+      const url = `https://fonts.googleapis.com/css2?family=${font}`;
+      const css = await (await fetchWithTimeout(url)).text();
+      const resource = css.match(/src: url\((.+)\) format\('(opentype|truetype)'\)/);
 
-    if (resource) {
-      const response = await fetch(resource[1]);
-      if (response.status == 200) {
-        return await response.arrayBuffer();
+      if (resource) {
+        const response = await fetchWithTimeout(resource[1], {}, 5000);
+        if (response.status == 200) {
+          return await response.arrayBuffer();
+        }
       }
+    } catch (error) {
+      console.error("Failed to load font:", error);
     }
 
     throw new Error("failed to load font data");
