@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getPosts } from "@/utils/utils";
+import { getPosts, Client } from "@/utils/utils";
 import {
   Meta,
   Schema,
@@ -14,6 +14,8 @@ import {
   Row,
   Avatar,
   Line,
+  Tag,
+  Tooltip,
 } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
@@ -100,6 +102,26 @@ export default async function Project({
           {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
         </Text>
         <Heading variant="display-strong-m">{post.metadata.title}</Heading>
+        {post.metadata.clients && (
+          <Column gap="8" align="center">
+            {typeof post.metadata.clients === "string" ? (
+              <Text variant="body-default-m" onBackground="neutral-weak" align="center">
+                <Text as="span" variant="label-strong-m">Clients: </Text>
+                {post.metadata.clients}
+              </Text>
+            ) : (
+              <Row wrap gap="8">
+                {post.metadata.clients.map((client: Client, index: number) => (
+                  <span key={index} title={client.models}>
+                    <Tag size="l" prefixIcon={client.icon}>
+                      {client.name}
+                    </Tag>
+                  </span>
+                ))}
+              </Row>
+            )}
+          </Column>
+        )}
       </Column>
       <Row marginBottom="32" horizontal="center">
         <Row gap="16" vertical="center">

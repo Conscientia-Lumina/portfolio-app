@@ -1,19 +1,30 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import {
+  About,
+  Projects,
+  Gallery,
+  Home,
+  Newsletter,
+  Person,
+  Social,
+  Work,
+  Certificate,
+} from "@/types";
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
 
+
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Andrew",
+  lastName: "Macedo",
+  name: `Andrew Macedo`,
+  role: "Project Manager & Robotics Engineer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "findat.global@gmail.com",
+  location: "Asia/Bangkok", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "German", "French", "Thai"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
@@ -24,17 +35,12 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/Conscientia-Lumina",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.linkedin.com/in/macedoandrew/",
   },
   {
     name: "Email",
@@ -49,9 +55,9 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>From Robotics to AI: Building Intelligent Systems</>,
   featured: {
-    display: true,
+    display: false,
     title: (
       <Row gap="12" vertical="center">
         <strong className="ml-4">Once UI</strong>{" "}
@@ -65,14 +71,11 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Selene, a design engineer at{" "}
-      <Logo
-        dark
-        icon="/trademarks/wordmark-dark.svg"
-        style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
-      />
-      , where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm Andrew, a Project Manager and Software Engineer specializing in
+      robotics and AI-driven solutions. With a passion for innovation, I create
+      intelligent systems that enhance efficiency and drive progress across
+      industries. Explore my portfolio to see how I blend technology and
+      creativity to solve complex challenges.
     </>
   ),
 };
@@ -91,16 +94,16 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://calendly.com/findat-global/30min",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Andrew Macedo is a seasoned Project Manager and Robotics Engineer with proven expertise in AI-driven automation, industrial robotics, and scalable software solutions.
+        With a diverse background spanning automotive manufacturing, machine learning operations, and full-stack development, he delivers innovative systems that optimize efficiency and drive measurable business results. 
+        Fluent in English and German Andrew brings a global perspective to complex technical challenges. His portfolio demonstrates a unique blend of hands-on engineering experience and strategic project leadership, making him an ideal partner for organizations seeking transformative technology solutions in robotics, AI, and intelligent automation.
       </>
     ),
   },
@@ -109,45 +112,92 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Scale AI",
+        timeframe: "2024 - 2025",
+        role: "Coding Project Manager",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Coordinated cross-functional teams to ensure timely delivery of
+            high-quality annotated datasets for machine learning applications,
+            contributing to some of the industry's most advanced AI models.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Developed and implemented training programs for new hires and
+            freelancers, reducing onboarding time and improving overall team
+            productivity.
+          </>,
+          <>
+            Collaborated with engineering and product teams to align project
+            goals with business objectives, driving client satisfaction and
+            retention.
+          </>,
+          <>
+            Built data analysis tools to monitor project progress and identify
+            areas for improvement, leveraging insights to optimize workflows and
+            resource allocation.
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
+          // {
+          //  src: "/images/projects/project-01/scale-background.jpg",
+          //  alt: "Scale AI image",
+          //  width: 16,
+          //  height: 9,
+          //},
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "SAR Elektronic GmbH",
+        timeframe: "2018 - 2023",
+        role: "Senior Robotics Engineer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Designed and deployed custom robotic automation for Volkswagen and
+            BMW, ensuring seamless PLC integration and error reduction.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Developed custom software solutions for robotic control and
+            automation
+          </>,
+          <>
+            Regularly collaborated with senior client engineers to align
+            solutions with evolving requirements, delivering high-performance
+            systems tailored to complex manufacturing demands.
+          </>,
+          <>
+            Optimized robotic workflows through data-driven analysis, enhancing
+            efficiency and reducing operational costs through cycle time reduction.
           </>,
         ],
-        images: [],
+        images: [
+          // {
+          //   src: "/images/projects/project-01/sar-banner.png",
+          //   alt: "SAR Elektronic GmbH image",
+          //   width: 16,
+          //   height: 9,
+          // },
+        ],
       },
+      {
+        company: "Faurecia / Plastic Omnium",
+        timeframe: "2014 - 2018",
+        role: "Plant Process Engineer",
+        achievements: [        
+          <>
+            At Faurecia I studied Synthetic Material Engineering and my role involved managing injection molding systems, start-up processes, and quality control of manufactured components
+          </>,
+          <>
+            At Plastic Omnium I was responsible for overseeing production lines, optimizing manufacturing processes, and ensuring product quality in a high-volume automotive parts facility
+          </>,
+          <>
+            Implemented process improvements that enhanced production efficiency and reduced waste, contributing to cost savings and improved product quality
+          </>,
+          <>
+            Programmed robotic systems to pick and place components, enhancing assembly line efficiency and accuracy
+          </>,
+        ],
+      }
     ],
   },
   studies: {
@@ -155,12 +205,12 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Berufsschule Rothenburg-Dinkelsbühl",
+        description: <>Studied manufacturing technology and industrial processes.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Kuka College Braunschweig",
+        description: <>Studied robotics and automation engineering.</>,
       },
     ],
   },
@@ -169,36 +219,9 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Software Development",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
-        ),
-        tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Full-stack development with JavaScript, React.js, Python, and C/C#. Experienced in building scalable backend systems and data pipelines.</>
         ),
         tags: [
           {
@@ -206,95 +229,267 @@ const about: About = {
             icon: "javascript",
           },
           {
+            name: "React.js",
+            icon: "react",
+          },
+          {
             name: "Next.js",
             icon: "nextjs",
+          },
+        ],
+        images: []
+      },
+      {
+        title: "Project Management & Leadership",
+        description: (
+          <>Team leadership, project planning, execution, and stakeholder communication across cross-functional teams.</>
+        ),
+        tags: [
+          {
+            name: "Project Management",
+            icon: "project-management",
+          },
+          {
+            name: "Leadership",
+            icon: "star",
+          },
+        ],
+        images: []
+      },
+      {
+        title: "Robotics & Automation",
+        description: (
+          <>Robotics engineering, PLC integration, industrial automation, process optimization, and system commissioning.</>
+        ),
+        tags: [
+          {
+            name: "Robotics",
+            icon: "settings",
+          },
+          {
+            name: "Automation",
+            icon: "zap",
+          },
+        ],
+        images: []
+      },
+      {
+        title: "Data Analysis & AI",
+        description: (
+          <>Data pipelines, analytics, LLM fine-tuning, QA automation, and AI-driven insights for business intelligence.</>
+        ),
+        tags: [
+          {
+            name: "Data Analysis",
+            icon: "grid",
+          },
+          {
+            name: "SQL",
+            icon: "database",
+          },
+          {
+            name: "AI/ML",
+            icon: "cpu",
+          },
+        ],
+        images: []
+      },
+      {
+        title: "Tools & Platforms",
+        description: (
+          <>Git/GitHub, Supabase, Airtable, OpenAI API, React dashboards, and comprehensive documentation.</>
+        ),
+        tags: [
+          {
+            name: "Git/GitHub",
+            icon: "github",
           },
           {
             name: "Supabase",
             icon: "supabase",
           },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Airtable",
+            icon: "grid",
           },
         ],
-      },  
+        images: []
+      },
     ],
   },
 };
 
-const blog: Blog = {
-  path: "/blog",
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+const projects: Projects = {
+  path: "/projects",
+  label: "Projects",
+  title: "Successful Projects",
+  description: `Explore ${person.name}'s most successful projects showcasing expertise in AI, robotics, and automation`,
+  // Create new project posts by adding a new .mdx file to app/projects/posts
+  // All project posts will be listed on the /projects route
 };
 
 const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  description: `${person.name}'s Discography`,
+  // Create new work/project pages by adding a new .mdx file to app/work/projects
+  // All work projects will be listed on the /home and /work routes
 };
 
-const gallery: Gallery = {
-  path: "/gallery",
-  label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
+const certifications: Certificate = {
+  path: "/certs",
+  label: "Certifications",
+  title: `Certifications – ${person.name}`,
+  description: `Certifications earned by ${person.name}`,
+  
   images: [
     {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
+      src: "/images/certs/engel_eob_1.jpg",
+      alt: "Engel EOB 1",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
+      src: "/images/certs/engel_era_1.jpg",
+      alt: "Engel ERA 1",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
+      src: "/images/certs/engel_erb_1.jpg",
+      alt: "Engel ERB 1",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
+      src: "/images/certs/kuka_1.jpg",
+      alt: "Kuka 1",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
+      src: "/images/certs/kuka_2.jpg",
+      alt: "Kuka 2",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/certs/kuka_3.jpg",
+      alt: "Kuka 3",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/certs/kuka_4.jpg",
+      alt: "Kuka 4",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/certs/sar_kuka_1.jpg",
+      alt: "SAR Kuka 1",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/certs/sar_kuka_2.jpg",
+      alt: "SAR Kuka 2",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/certs/sar_kuka_3.jpg",
+      alt: "SAR Kuka 3",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/certs/sar_kuka_4.jpg",
+      alt: "SAR Kuka 4",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/certs/sar_kuka_5.jpg",
+      alt: "SAR Kuka 5",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/certs/sar_kuka_6.jpg",
+      alt: "SAR Kuka 6",
+      orientation: "horizontal",
     },
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+const gallery: Gallery = {
+  path: "/gallery",
+  label: "Feedback Gallery",
+  title: `Feedback gallery – ${person.name}`,
+  description: `Feedback from projects by ${person.name}`,
+
+  images: [
+    {
+      src: "/images/gallery/feedback1.png",
+      alt: "image",
+      orientation: "auto",      
+    },
+    {
+      src: "/images/gallery/feedback2.png",
+      alt: "image",
+      orientation: "auto",
+    },
+    {
+      src: "/images/gallery/feedback3.png",
+      alt: "image",
+      orientation: "auto",
+    },
+    {
+      src: "/images/gallery/feedback4.png",
+      alt: "image",
+      orientation: "auto",
+    },
+    {
+      src: "/images/gallery/feedback5.png",
+      alt: "image",
+      orientation: "auto",
+    },
+    {
+      src: "/images/gallery/feedback6.png",
+      alt: "image",
+      orientation: "auto",
+    },
+    {
+      src: "/images/gallery/feedback7.png",
+      alt: "image",
+      orientation: "auto",
+    },
+    {
+      src: "/images/gallery/feedback8.png",
+      alt: "image",
+      orientation: "auto",
+    },
+    {
+      src: "/images/gallery/feedback9.png",
+      alt: "image",
+      orientation: "auto",
+    },
+    {
+      src: "/images/gallery/feedback10.png",
+      alt: "image",
+      orientation: "auto",
+    },
+    {
+      src: "/images/gallery/feedback11.png",
+      alt: "image",
+      orientation: "auto",
+    },
+    {
+      src: "/images/gallery/feedback12.png",
+      alt: "image",
+      orientation: "auto",
+    },
+    {
+      src: "/images/gallery/feedback13.png",
+      alt: "image",
+      orientation: "auto",
+    },
+    {
+      src: "/images/gallery/feedback14.png",
+      alt: "image",
+      orientation: "auto",
+    },
+  ],
+};
+
+export { person, social, newsletter, home, about, projects, work, certifications, gallery };

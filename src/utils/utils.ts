@@ -9,6 +9,12 @@ type Team = {
   linkedIn: string;
 };
 
+type Client = {
+  name: string;
+  icon: string;
+  models: string;
+};
+
 type Metadata = {
   title: string;
   publishedAt: string;
@@ -18,6 +24,7 @@ type Metadata = {
   tag?: string;
   team: Team[];
   link?: string;
+  clients?: string | Client[];
 };
 
 import { notFound } from "next/navigation";
@@ -35,6 +42,8 @@ function readMDXFile(filePath: string) {
     notFound();
   }
 
+  // Add timestamp to bypass caching
+  const stats = fs.statSync(filePath);
   const rawContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(rawContent);
 
@@ -47,15 +56,19 @@ function readMDXFile(filePath: string) {
     tag: data.tag || [],
     team: data.team || [],
     link: data.link || "",
+    clients: data.clients || "",
   };
 
   return { metadata, content };
 }
 
+export type { Client };
+
 function getMDXData(dir: string) {
   const mdxFiles = getMDXFiles(dir);
   return mdxFiles.map((file) => {
-    const { metadata, content } = readMDXFile(path.join(dir, file));
+    const filePath = path.join(dir, file);
+    const { metadata, content } = readMDXFile(filePath);
     const slug = path.basename(file, path.extname(file));
 
     return {

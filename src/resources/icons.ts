@@ -12,6 +12,9 @@ import {
   HiOutlineDocument,
   HiOutlineGlobeAsiaAustralia,
   HiOutlineRocketLaunch,
+  HiOutlineCog6Tooth,
+  HiOutlineSparkles,
+  HiOutlineCpuChip,
 } from "react-icons/hi2";
 
 import {
@@ -20,6 +23,10 @@ import {
   PiGridFourDuotone,
   PiBookBookmarkDuotone,
   PiImageDuotone,
+  PiListChecksDuotone,
+  PiDatabaseDuotone,
+  PiBrain,
+  PiLockDuotone,
 } from "react-icons/pi";
 
 import {
@@ -27,9 +34,23 @@ import {
   SiNextdotjs,
   SiFigma,
   SiSupabase,
+  SiReact,
+  SiOpenai,
+  SiMeta,
+  SiApple,
+  SiGoogle,
+  SiAnthropic,
+  SiVolkswagen,
+  SiBmw,
+  SiPorsche,
+  SiMercedes,
+  SiAudi,
+  SiSkoda,
+  SiOpel,
+  SiMan,
 } from "react-icons/si";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaStar, } from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -63,6 +84,28 @@ export const iconLibrary: Record<string, IconType> = {
   whatsapp: FaWhatsapp,
   reddit: FaReddit,
   telegram: FaTelegram,
+  react: SiReact,
+  "project-management": PiListChecksDuotone,
+  star: FaStar,
+  settings: HiOutlineCog6Tooth,
+  zap: HiOutlineSparkles,
+  database: PiDatabaseDuotone,
+  cpu: HiOutlineCpuChip,
+  brain: PiBrain,
+  userLock: PiLockDuotone,
+  openai: SiOpenai,
+  meta: SiMeta,
+  apple: SiApple,
+  google: SiGoogle,
+  anthropic: SiAnthropic,
+  volkswagen: SiVolkswagen,
+  bmw: SiBmw,
+  porsche: SiPorsche,
+  mercedes: SiMercedes,
+  audi: SiAudi,
+  skoda: SiSkoda,
+  opel: SiOpel,
+  man: SiMan,
 };
 
 export type IconLibrary = typeof iconLibrary;

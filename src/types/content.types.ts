@@ -210,10 +210,10 @@ export interface About extends BasePageConfig {
 }
 
 /**
- * Blog page configuration.
- * @description Configuration for the Blog page, including metadata and navigation label.
+ * Projects page configuration.
+ * @description Configuration for the Projects page, including metadata and navigation label for showcasing valuable projects.
  */
-export interface Blog extends BasePageConfig {}
+export interface Projects extends BasePageConfig {}
 
 /**
  * Work/projects page configuration.
@@ -228,6 +228,23 @@ export interface Work extends BasePageConfig {}
 export interface Gallery extends BasePageConfig {
   /** List of images in the gallery */
   images: Array<{
+    /** Image source path */
+    src: string;
+    /** Image alt text */
+    alt: string;
+    /** Image orientation (horizontal/vertical) */
+    orientation: string;
+  }>;
+}
+
+/**
+ * Certifications section configuration.
+ * @description Configuration for displaying certifications on the work page
+ */
+export interface Certificate extends BasePageConfig {
+  /** Path to certifications directory */
+  /** List of images in the certs */
+  images?: Array<{
     /** Image source path */
     src: string;
     /** Image alt text */

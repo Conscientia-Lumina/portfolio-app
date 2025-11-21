@@ -8,7 +8,11 @@ import {
   Heading,
   SmartLink,
   Text,
+  Row,
+  Tag,
+  Tooltip,
 } from "@once-ui-system/core";
+import { Client } from "@/utils/utils";
 
 interface ProjectCardProps {
   href: string;
@@ -19,6 +23,7 @@ interface ProjectCardProps {
   description: string;
   avatars: { src: string }[];
   link: string;
+  clients?: string | Client[];
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -29,7 +34,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   avatars,
   link,
+  clients,
 }) => {
+  console.log('DEBUG ProjectCard - clients:', clients, 'type:', typeof clients);
+  
   return (
     <Column fillWidth gap="m">
       <Carousel
@@ -39,8 +47,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           alt: title,
         }))}
       />
-      <Flex
-        s={{ direction: "column" }}
+      <Column
         fillWidth
         paddingX="s"
         paddingTop="12"
@@ -48,14 +55,32 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         gap="l"
       >
         {title && (
-          <Flex flex={5}>
-            <Heading as="h2" wrap="balance" variant="heading-strong-xl">
-              {title}
-            </Heading>
-          </Flex>
+          <Heading as="h2" wrap="balance" variant="heading-strong-xl">
+            {title}
+          </Heading>
+        )}
+        {clients && (
+          <Column gap="8">
+            {typeof clients === "string" ? (
+              <Text variant="body-default-m" onBackground="neutral-weak">
+                <Text as="span" variant="label-strong-m">Clients: </Text>
+                {clients}
+              </Text>
+            ) : (
+              <Row wrap gap="8">
+                {clients.map((client, index) => (
+                  <span key={index} title={client.models}>
+                    <Tag size="l" prefixIcon={client.icon}>
+                      {client.name}
+                    </Tag>
+                  </span>
+                ))}
+              </Row>
+            )}
+          </Column>
         )}
         {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
-          <Column flex={7} gap="16">
+          <Column gap="16">
             {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
             {description?.trim() && (
               <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
@@ -84,7 +109,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </Flex>
           </Column>
         )}
-      </Flex>
+      </Column>
     </Column>
   );
 };

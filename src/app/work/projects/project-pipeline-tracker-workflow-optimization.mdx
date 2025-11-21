@@ -1,0 +1,145 @@
+---
+title: "Project Pipeline Tracker: Data-Driven Contributor Workflow Optimization"
+publishedAt: "2025-08-05"
+order: 2
+summary: "Built a centralized Airtable-based platform for managing contributor workflows, skills tracking, and project performance optimization across multiple coding initiatives."
+clients:
+  - name: "Scale AI"
+    icon: "brain"
+    models: "RLHF, SFT, Eval Projects"
+  - name: "Labelbox"
+    icon: "database"
+    models: "Coding Projects"
+  - name: "Mercor"
+    icon: "cpu"
+    models: "Engineering Talent Marketplace"
+  - name: "Private Entities"
+    icon: "userLock"
+    models: "Custom Enterprise Solutions"
+images:
+  - "/images/pipeline_tracker/ppt_airtable_dash.png"
+  - "/images/pipeline_tracker/ppt_airtable_dash_2.png"
+  - "/images/pipeline_tracker/ppt_airtable_ccat_dash.png"
+  - "/images/pipeline_tracker/ppt_airtable_cb_issue.png"
+  - "/images/pipeline_tracker/ppt_airtable_sr_issue.png"
+
+team:
+  - name: "Andrew Macedo"
+    role: "Project Manager & Full-Stack Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/andrew-macedo/"
+link: "https://findat.global/"
+---
+
+## Overview
+
+Recognizing a critical gap in visibility across distributed coding projects and contributor teams, I designed and built a comprehensive Project Pipeline Tracker—a centralized data management platform built on Airtable and integrated with custom automation tools. This system transformed how teams track contributor skills, performance metrics, project status, and resource allocation. By connecting project data with contributor competency assessments and automated dashboards, the platform enables data-driven decision-making, streamlines onboarding processes, and provides real-time visibility into project pipelines across the entire organization.
+
+## Key Features
+
+- **Centralized Contributor Database**: Created a comprehensive database tracking contributor profiles, skills, experience levels, project history, and performance ratings. The system maintains a living record of team capabilities, enabling smarter resource allocation decisions.
+
+- **Automated Skills Assessment and Matching**: Implemented algorithms that match project requirements with contributor skills and availability. The system recommends optimal team compositions based on historical performance, skill gaps, and project complexity.
+
+- **Real-Time Project Status Tracking**: Developed dashboards that aggregate project status across all initiatives—including milestones, deliverables, blockers, and timelines. Automated status updates from project management tools ensure the system always reflects current reality.
+
+- **Performance Analytics and Insights**: Built custom dashboards that surface key metrics including contributor productivity, project velocity, code quality indicators, and delivery accuracy. These insights inform performance discussions and identify high performers and skill gaps.
+
+- **Competency Assessment Framework**: Designed a structured system for evaluating contributor competencies across multiple dimensions (languages, frameworks, soft skills). Assessment data drives training recommendations and career development planning.
+
+- **Automated Workflow and Issue Tracking**: Integrated with GitHub to automatically sync issue creation, assignment, and completion data. This enables accurate velocity tracking and helps identify bottlenecks in real-time.
+
+- **Onboarding and Knowledge Transfer System**: Streamlined the onboarding process by centralizing project context, documentation, contributor roles, and initial task assignments. New team members can ramp up faster with clear visibility into project history and team structure.
+
+## Technologies Used
+
+- **Data Platform**: Airtable for centralized data management and database design
+- **Automation**: Zapier and custom APIs for connecting Airtable with external tools
+- **Version Control Integration**: GitHub API for syncing issue tracking and code contribution data
+- **Frontend Dashboards**: React.js and custom visualization libraries for real-time analytics
+- **Backend Logic**: Node.js for processing data pipelines and triggering automated workflows
+- **Analytics**: SQL for complex data queries and aggregation
+
+## System Architecture
+
+**Data Layer:**
+- Airtable base with interconnected tables: Contributors, Projects, Skills, Performance Metrics, Issues, Assignments
+- Normalized schema preventing data duplication and ensuring consistency
+- Audit trails tracking all changes for compliance and analysis
+
+**Integration Layer:**
+- GitHub API connectors syncing code contribution and issue data
+- Webhook handlers capturing events in real-time
+- Data transformation pipelines standardizing external data formats
+
+**Business Logic Layer:**
+- Algorithms for skills matching and recommendation
+- Automated competency assessments based on project performance
+- Anomaly detection identifying unusual patterns (e.g., sudden quality drops, velocity changes)
+
+**Presentation Layer:**
+- React dashboards providing different views for managers, contributors, and leadership
+- Real-time updates ensuring all stakeholders see current information
+- Customizable views and filters enabling role-specific insights
+
+## Implementation Highlights
+
+**Contributor Skill Graph**
+
+Developed a sophisticated representation of contributor skills mapped to specific projects and technologies. The system learns from project outcomes—if a contributor with Python skills delivers high-quality work on Python projects, their Python rating increases. Over time, this creates an accurate capability map guiding project assignments.
+
+**Predictive Project Velocity**
+
+Built models that estimate project delivery timelines based on team composition, historical velocity, project complexity, and contributor availability. These estimates help leadership make realistic commitments and identify risks early.
+
+**Automated Performance Reporting**
+
+Created monthly performance summaries that surface individual and team metrics—including contribution counts, code quality indicators, issue resolution rates, and project outcomes. Reports highlight both achievements and areas for improvement, supporting constructive performance conversations.
+
+**Knowledge Capture System**
+
+Implemented automated documentation of project decisions, technical learnings, and solutions to common problems. This institutional knowledge becomes available to future contributors, accelerating onboarding and preventing repeated problem-solving.
+
+## Challenges and Solutions
+
+**Challenge**: Gathering accurate performance data from siloed project management tools and code repositories without overburdening contributors with data entry.
+- **Solution**: Automated data extraction from source systems (GitHub, Jira, etc.) through APIs and webhooks. Minimized manual input by deriving metrics directly from system activity.
+
+**Challenge**: Maintaining data quality and accuracy across a distributed system with multiple integration points.
+- **Solution**: Built validation rules and anomaly detection to flag suspicious data. Implemented reconciliation processes and audit trails to catch inconsistencies quickly.
+
+**Challenge**: Creating meaningful skill assessments that account for the subjective nature of software development capabilities.
+- **Solution**: Developed a multi-factor assessment framework combining objective metrics (code quality, test coverage, delivery timeliness) with subjective peer reviews. Historical project performance validates assessment accuracy.
+
+**Challenge**: Scaling the system to support hundreds of contributors across dozens of projects without performance degradation.
+- **Solution**: Implemented caching strategies, denormalized key metrics in dashboards, and built incremental update processes. Used background jobs for heavy computations rather than real-time calculations.
+
+**Challenge**: Ensuring contributors felt comfortable with performance tracking and data collection.
+- **Solution**: Maintained transparency about what data is collected and how it's used. Focused on objective, work-based metrics rather than surveillance. Emphasized that data serves development and career growth, not punishment.
+
+## Outcome and Impact
+
+The Project Pipeline Tracker delivered significant organizational improvements:
+
+- **60% Improvement in Onboarding Efficiency**: New contributors ramped up 40% faster with clear project context and mentor assignments based on skill matching
+- **35% Better Project Planning Accuracy**: Velocity predictions based on team composition enabled more realistic timeline estimates and resource planning
+- **50% Reduction in Resource Allocation Time**: Automated skill matching eliminated days of manual coordination when assigning contributors to projects
+- **25% Improvement in Code Quality**: Visibility into quality metrics and peer comparison created positive pressure for excellence
+- **Enhanced Career Development**: Structured competency assessments guide training investments and career progression conversations
+- **Decreased Knowledge Silos**: Automated knowledge capture reduced organizational dependency on individual contributors
+
+## Skills Demonstrated
+
+This project showcases comprehensive expertise in:
+
+- **System Design**: Architecting scalable solutions connecting multiple data sources and business requirements
+- **Database Design**: Creating normalized, efficient schemas supporting complex queries and relationships
+- **Integration Engineering**: Connecting disparate systems through APIs and automation workflows
+- **Analytics and Insights**: Designing metrics and dashboards that drive strategic decisions
+- **Process Automation**: Building workflows that eliminate manual repetitive tasks and improve consistency
+- **Stakeholder Management**: Designing systems that serve multiple user roles with different needs
+- **Full-Stack Development**: End-to-end ownership from data architecture to user interface
+
+---
+
+This project demonstrates the value of systematic thinking applied to organizational challenges—using data, automation, and thoughtful system design to transform operational efficiency and create better outcomes for teams.
