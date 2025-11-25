@@ -7,6 +7,7 @@ import {
   HiEnvelope,
   HiCalendarDays,
   HiArrowRight,
+  HiArrowLeft,
   HiOutlineEye,
   HiOutlineEyeSlash,
   HiOutlineDocument,
@@ -27,6 +28,8 @@ import {
   PiDatabaseDuotone,
   PiBrain,
   PiLockDuotone,
+  PiFactory,
+  PiCode,
 } from "react-icons/pi";
 
 import {
@@ -55,6 +58,7 @@ import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaXTwitter, FaFacebook
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
   arrowRight: HiArrowRight,
+  arrowLeft: HiArrowLeft,
   email: HiEnvelope,
   globe: HiOutlineGlobeAsiaAustralia,
   person: PiUserCircleDuotone,
@@ -93,6 +97,8 @@ export const iconLibrary: Record<string, IconType> = {
   cpu: HiOutlineCpuChip,
   brain: PiBrain,
   userLock: PiLockDuotone,
+  robot: PiCode,
+  factory: PiFactory,
   openai: SiOpenai,
   meta: SiMeta,
   apple: SiApple,

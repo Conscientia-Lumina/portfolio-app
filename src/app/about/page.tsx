@@ -12,10 +12,11 @@ import {
   Schema,
   Row,
 } from "@once-ui-system/core";
-import { baseURL, about, person, social } from "@/resources";
+import { baseURL, about, person, social, certifications } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
+import Link from "next/link";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -117,7 +118,31 @@ export default function About() {
             vertical="center"
             marginBottom="32"
           >
-            {about.calendar.display && (
+            <Row gap="12" wrap horizontal="center" s={{ horizontal: "center" }} marginBottom="m">
+              {about.calendar.display && (
+                <Row
+                  fitWidth
+                  border="brand-alpha-medium"
+                  background="brand-alpha-weak"
+                  radius="full"
+                  padding="4"
+                  gap="8"
+                  vertical="center"
+                  className={styles.blockAlign}
+                  style={{
+                    backdropFilter: "blur(var(--static-space-1))",
+                  }}
+                >
+                  <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
+                  <Row paddingX="8">Schedule a call</Row>
+                  <IconButton
+                    href={about.calendar.link}
+                    data-border="rounded"
+                    variant="secondary"
+                    icon="chevronRight"
+                  />
+                </Row>
+              )}
               <Row
                 fitWidth
                 border="brand-alpha-medium"
@@ -125,23 +150,22 @@ export default function About() {
                 radius="full"
                 padding="4"
                 gap="8"
-                marginBottom="m"
                 vertical="center"
                 className={styles.blockAlign}
                 style={{
                   backdropFilter: "blur(var(--static-space-1))",
                 }}
               >
-                <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Row paddingX="8">Schedule a call</Row>
+                <Icon paddingLeft="12" name="eye" onBackground="brand-weak" />
+                <Row paddingX="8">View Certifications</Row>
                 <IconButton
-                  href={about.calendar.link}
+                  href={certifications.path}
                   data-border="rounded"
                   variant="secondary"
                   icon="chevronRight"
                 />
               </Row>
-            )}
+            </Row>
             <Heading className={styles.textAlign} variant="display-strong-xl">
               {person.name}
             </Heading>

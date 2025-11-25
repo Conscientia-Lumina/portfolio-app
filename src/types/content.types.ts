@@ -222,19 +222,40 @@ export interface Projects extends BasePageConfig {}
 export interface Work extends BasePageConfig {}
 
 /**
+ * Gallery image configuration.
+ */
+export type GalleryImage = {
+  /** Image source path */
+  src: string;
+  /** Image alt text */
+  alt: string;
+  /** Image orientation (horizontal/vertical/auto) */
+  orientation: string;
+};
+
+/**
+ * Gallery category/folder configuration.
+ */
+export type GalleryCategory = {
+  /** Unique identifier for the category */
+  id: string;
+  /** Display title for the category */
+  title: string;
+  /** Optional icon for the category card */
+  icon?: string;
+  /** Description shown on the category card */
+  description?: string;
+  /** List of feedback images in this category */
+  images: GalleryImage[];
+};
+
+/**
  * Gallery page configuration.
- * @description Configuration for the Gallery page, including metadata, navigation label, and image list.
+ * @description Configuration for the Gallery page, including metadata, navigation label, and categorized image list.
  */
 export interface Gallery extends BasePageConfig {
-  /** List of images in the gallery */
-  images: Array<{
-    /** Image source path */
-    src: string;
-    /** Image alt text */
-    alt: string;
-    /** Image orientation (horizontal/vertical) */
-    orientation: string;
-  }>;
+  /** List of categories/folders containing feedback images */
+  categories: GalleryCategory[];
 }
 
 /**

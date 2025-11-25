@@ -418,76 +418,158 @@ const gallery: Gallery = {
   title: `Feedback gallery – ${person.name}`,
   description: `Feedback from projects by ${person.name}`,
 
-  images: [
+  categories: [
     {
-      src: "/images/gallery/feedback1.png",
-      alt: "image",
-      orientation: "auto",      
+      id: "scale-ai",
+      title: "Scale AI",
+      icon: "brain",
+      description: "Feedback from AI/ML project management work",
+      images: [
+        {
+          src: "/images/gallery/recommend_august_ss.png",
+          alt: "Scale AI feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/gallery/feedback1.png",
+          alt: "Scale AI feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/gallery/feedback2.png",
+          alt: "Scale AI feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/gallery/feedback3.png",
+          alt: "Scale AI feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/gallery/feedback4.png",
+          alt: "Scale AI feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/gallery/feedback5.png",
+          alt: "Scale AI feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/gallery/feedback6.png",
+          alt: "SAR Elektronic feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/gallery/feedback7.png",
+          alt: "SAR Elektronic feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/gallery/feedback8.png",
+          alt: "SAR Elektronic feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/gallery/feedback9.png",
+          alt: "SAR Elektronic feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/gallery/feedback10.png",
+          alt: "Faurecia feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/gallery/feedback11.png",
+          alt: "Faurecia feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/gallery/feedback12.png",
+          alt: "Plastic Omnium feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/gallery/feedback13.png",
+          alt: "Project feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/gallery/feedback14.png",
+          alt: "Project feedback",
+          orientation: "auto",
+        },
+      ],
     },
     {
-      src: "/images/gallery/feedback2.png",
-      alt: "image",
-      orientation: "auto",
+      id: "findat-global",
+      title: "Findat Global",
+      icon: "person",
+      description: "Feedback from colleagues and clients",
+      images: [
+        {
+          src: "/images/findat/findat_fb_1.png",
+          alt: "Project feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/findat/findat_fb_2.png",
+          alt: "Project feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/findat/findat_fb_3.png",
+          alt: "Project feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/findat/findat_fb_4.png",
+          alt: "Project feedback",
+          orientation: "auto",
+        },
+        {
+          src: "/images/findat/findat_fb_5.png",
+          alt: "Project feedback",
+          orientation: "auto",
+        },        
+      ],
     },
     {
-      src: "/images/gallery/feedback3.png",
-      alt: "image",
-      orientation: "auto",
+      id: "sar-elektronic",
+      title: "SAR Elektronic",
+      icon: "robot",
+      description: "Reference Letter from SAR Elektronic GmbH. projects",
+      images: [
+        {
+          src: "/images/certs/sar_zeugnis_alt_1.jpg",
+          alt: "Work Certificate",
+          orientation: "auto",
+        },
+        {
+          src: "/images/certs/sar_zeugnis_alt_2.jpg",
+          alt: "Work Certificate",
+          orientation: "auto",
+        },  
+      ],
     },
     {
-      src: "/images/gallery/feedback4.png",
-      alt: "image",
-      orientation: "auto",
-    },
-    {
-      src: "/images/gallery/feedback5.png",
-      alt: "image",
-      orientation: "auto",
-    },
-    {
-      src: "/images/gallery/feedback6.png",
-      alt: "image",
-      orientation: "auto",
-    },
-    {
-      src: "/images/gallery/feedback7.png",
-      alt: "image",
-      orientation: "auto",
-    },
-    {
-      src: "/images/gallery/feedback8.png",
-      alt: "image",
-      orientation: "auto",
-    },
-    {
-      src: "/images/gallery/feedback9.png",
-      alt: "image",
-      orientation: "auto",
-    },
-    {
-      src: "/images/gallery/feedback10.png",
-      alt: "image",
-      orientation: "auto",
-    },
-    {
-      src: "/images/gallery/feedback11.png",
-      alt: "image",
-      orientation: "auto",
-    },
-    {
-      src: "/images/gallery/feedback12.png",
-      alt: "image",
-      orientation: "auto",
-    },
-    {
-      src: "/images/gallery/feedback13.png",
-      alt: "image",
-      orientation: "auto",
-    },
-    {
-      src: "/images/gallery/feedback14.png",
-      alt: "image",
-      orientation: "auto",
+      id: "faurecia",
+      title: "Faurecia / Plastic Omnium",
+      icon: "factory",
+      description: "Reference Letter from Faurecia / Plastic Omnium engineering projects",
+      images: [
+        {
+          src: "/images/certs/po_zeugnis_1.jpg",
+          alt: "Work Certificate",
+          orientation: "auto",
+        }, 
+        {
+          src: "/images/certs/po_zeugnis_2.jpg",
+          alt: "Work Certificate",
+          orientation: "auto",
+        }, 
+      ],
     },
   ],
 };
