@@ -14,7 +14,7 @@ import {
   RevealFx,
   SpacingToken,
 } from "@once-ui-system/core";
-import { Footer, Header, RouteGuard, Providers } from "@/components";
+import { Footer, Header, RouteGuard, Providers, ColorBends } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
 
 export async function generateMetadata() {
@@ -115,6 +115,18 @@ export default async function RootLayout({
           padding="0"
           horizontal="center"
         >
+          <ColorBends
+            colors={["#410051ff", "#321a1aff", "#0f2d35ff"]}
+            rotation={100}
+            speed={0.2}
+            scale={1.5}
+            frequency={2}
+            warpStrength={0.8}
+            mouseInfluence={2.5}
+            parallax={0.4}
+            noise={0.05}
+            transparent
+          />
           <Analytics />
           <RevealFx fill position="absolute">
             <Background
